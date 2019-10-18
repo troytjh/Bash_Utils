@@ -21,7 +21,8 @@ dark_mode_image
     fill transparent whith color
         *split into foreground and background. set background color
 
-        ffmpeg -i outputname_03_dark.png -filter_complex "[0]split=2[bg][fg];[bg]drawbox=c=0xE6E6E6@1:replace=1:t=fill[bg]; 
+        #replace 0xE1E1E1 to change color of white elements on page. DEFAULT is light grey
+        ffmpeg -i outputname_03_dark.png -filter_complex "[0]split=2[bg][fg];[bg]drawbox=c=0xE1E1E1@1:replace=1:t=fill[bg]; 
             [bg][fg]overlay=format=auto" -c:a copy outputname_03_dark_2.png
 
 combine image to pdf
