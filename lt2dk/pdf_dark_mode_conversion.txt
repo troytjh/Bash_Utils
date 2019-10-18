@@ -1,0 +1,46 @@
+convert file to pdf
+    libreoffice --headless --invisible --convert-to pdf *.ppt  
+    **some distortion
+
+convert pdf to img
+    pdftoppm input.pdf out -png
+
+dark_mode_image
+    invert
+        ffmpeg -i in -vf negate out
+
+    brightness, contrast, gamma
+        ffmpeg -i in.png -vf eq=brightness=.25:contrast=1.15 -c:a copy out.png
+
+    Combined
+        ffmpeg -i in.png -vf negate,eq=brightness=.25:contrast=1.15 -c:a copy out.png
+
+    set white to transparent
+        ffmpeg -i in.png -vf colorkey=white -c:a copy out.png
+
+    fill transparent whith color
+        *split into foreground and background. set background color
+
+        ffmpeg -i outputname_03_dark.png -filter_complex "[0]split=2[bg][fg];[bg]drawbox=c=0xE6E6E6@1:replace=1:t=fill[bg]; 
+            [bg][fg]overlay=format=auto" -c:a copy outputname_03_dark_2.png
+
+combine image to pdf
+    convert in1.png in2.png in3.png etc.png out.pdf
+
+full proccess
+    cd workdirectory
+
+    mkdir -p img
+
+    pdftoppm input.pdf img/out -png
+
+    ffmpeg -i in.png -vf negate,eq=brightness=.25:contrast=1.15,colorkey=white -c:a copy out_dark.png
+
+    ffmpeg -i out_dark.png -filter_complex "[0]split=2[bg][fg];[bg]drawbox=c=0xE1E1E1@1:
+    replace=1:t=fill[bg]; [bg][fg]overlay=format=auto" -c:a copy out_dark_1.png
+
+    rm img/*_dark.png
+
+    convert img/*_dark_1.png out.pdf
+
+    rm img
