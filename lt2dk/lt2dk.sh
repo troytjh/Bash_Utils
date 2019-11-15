@@ -17,5 +17,5 @@ do
     rm img/${OUT}_dark-${i}.png
 done
 
-convert -limit memory 3000 -limit map 3000 -limit area 10000 -limit files 2024 img/*.png -density 150 ${OUT}_dark.pdf
+convert -limit memory 3000 -limit map 3000 -limit area 10000 img/*.png -density 150 ${OUT}_dark.pdf
 rm -r img
