@@ -6,7 +6,7 @@ OUT="${OUT// /_}"
 
 cd "$WORKDIR"
 mkdir img
-pdftoppm "$FILE" img/${OUT} -png
+pdftoppm -r 150 "$FILE" img/${OUT} -png
 
 len=$(pdfinfo "$FILE" | grep Pages | awk '{print $2}')
 for i in $(seq -w 1 $len)
@@ -17,5 +17,5 @@ do
     rm img/${OUT}_dark-${i}.png
 done
 
-convert img/*.png ${OUT}_dark.pdf
+convert -limit memory 3000 -limit map 3000 -limit area 10000 -limit files 2024 img/*.png -density 150 ${OUT}_dark.pdf
 rm -r img
