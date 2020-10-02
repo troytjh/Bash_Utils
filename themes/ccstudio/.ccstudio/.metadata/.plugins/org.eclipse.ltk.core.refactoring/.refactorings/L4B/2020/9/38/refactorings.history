@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;L4B/PxOverload.h&apos; to &apos;PxSET.h&apos;" description="Rename resource &apos;PxOverload.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PxOverload.h" name="PxSET.h" stamp="1600444001714" updateReferences="true"/>
+</session>

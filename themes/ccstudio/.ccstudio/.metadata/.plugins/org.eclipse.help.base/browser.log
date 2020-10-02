@@ -1,0 +1,10 @@
+
+Sep 17, 2020 21:09:39.06 NEW SESSION
+Sep 17, 2020 21:09:39.06 which: no mozilla in (/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/intelFPGA/20.1/modelsim_ase/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/intelFPGA/20.1/quartus/bin)
+Sep 17, 2020 21:09:39.06 which: no netscape in (/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/intelFPGA/20.1/modelsim_ase/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/intelFPGA/20.1/quartus/bin)
+Sep 17, 2020 21:09:39.06 /usr/bin/firefox
+
+Sep 18, 2020 09:34:58.03 NEW SESSION
+Sep 18, 2020 09:34:58.03 which: no mozilla in (/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/intelFPGA/20.1/modelsim_ase/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/intelFPGA/20.1/quartus/bin:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/.:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/aet_config:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/trace_config/setup:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/trace_config/devices:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../../common/bin:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../../common/uscif:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../tpi)
+Sep 18, 2020 09:34:58.03 which: no netscape in (/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/opt/intelFPGA/20.1/modelsim_ase/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/intelFPGA/20.1/quartus/bin:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/.:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/aet_config:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/trace_config/setup:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../xmldb/trace_config/devices:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../../common/bin:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../../common/uscif:/opt/ccstudio/ccs/ccs_base/emulation/analysis/bin/../../tpi)
+Sep 18, 2020 09:34:58.03 /usr/bin/firefox

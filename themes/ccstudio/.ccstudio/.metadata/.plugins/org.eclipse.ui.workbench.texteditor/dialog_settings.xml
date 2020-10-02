@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="DIO_BASE"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="DIO_PORT_Interruptable_Type"/>
+			<item value="DIO_BASE"/>
+			<item value="P9"/>
+			<item value="P"/>
+			<item value="BIT7"/>
+			<item value="BIT"/>
+			<item value="DIO_PORT_Odd"/>
+			<item value="DIO_Port_ODD"/>
+			<item value="DIO_Port"/>
+			<item value="DIO_PORT_EVEN"/>
+			<item value="DIO_PORT"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1280"/>
+		<item key="DIALOG_Y_ORIGIN" value="13"/>
+		<item key="DIALOG_WIDTH" value="370"/>
+		<item key="DIALOG_HEIGHT" value="414"/>
+		<item key="DIALOG_FONT_NAME" value="1|DejaVu Sans|11.0|0|GTK|1|"/>
+	</section>
+</section>

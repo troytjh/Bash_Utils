@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:L3A,org.eclipse.launchbar.core.descriptorType.default\:LED-OFF,org.eclipse.launchbar.core.descriptorType.default\:L3B,org.eclipse.launchbar.core.descriptorType.default\:L4-NoWires,org.eclipse.launchbar.core.descriptorType.default\:L4A,org.eclipse.launchbar.core.descriptorType.default\:L4B
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:L3A/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:L3A/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:L3B/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:L3B/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:L4A/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:L4B/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:LED-OFF/activeLaunchMode=run
