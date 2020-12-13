@@ -11,8 +11,12 @@ license=(LGPL)
 depends=(grub)
 makedepends=()
 install="tela.install"
-source=("git+https://github.com/vinceliuice/grub2-themes.git")
-sha256sums=('SKIP')
+source=(
+    "git+https://github.com/vinceliuice/grub2-themes.git"
+    "tela-remove_grub_install.patch"
+)
+sha256sums=('SKIP'
+            '9ad3533e48d1dbd94bd7b6fbf756cd861ce606bede879bb1017eebce131b9b2f')
 validpgpkeys=('2D1D5B0588357787DE9EE225EC94D18F7F05997E'  # Jonathan Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
@@ -21,6 +25,7 @@ validpgpkeys=('2D1D5B0588357787DE9EE225EC94D18F7F05997E'  # Jonathan Riddell <jr
 build() {
   cd $srcdir/grub2-themes
   sed -i "s%THEME_DIR=\"%THEME_DIR=\"${srcdir}\/build%g" install.sh
+  patch -p1 < ../tela-remove_grub_install.patch
   ./install.sh -t -2  
 }
 

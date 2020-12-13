@@ -2,6 +2,17 @@ THEME_DIR=/usr/share/grub/themes
 name=Tela
 gfxmode="GRUB_GFXMODE=2560x1440,auto"
 
+if [[ ${screen} == '2k' ]]; then
+    local screen="2k"
+elif [[ ${screen} == '4k' ]]; then
+    local screen="4k"
+elif [[ ${screen} == '1080p_21:9' ]]; then
+    local screen="1080p_21:9"
+else
+    local screen="1080p"
+fi
+
+
 # Check command availability
 function has_command() {
   command -v $1 > /dev/null
