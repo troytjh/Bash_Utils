@@ -1,0 +1,21 @@
+{
+    "name": "breeze",
+    "displayName": "Breeze",
+    "description": "Breeze theme for vscode based on KDE's theme documentation.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Breeze Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/breeze-dark-theme.json"
+            }
+        ]
+    }
+}

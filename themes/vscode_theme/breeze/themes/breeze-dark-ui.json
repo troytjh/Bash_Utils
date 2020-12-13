@@ -1,0 +1,29 @@
+{
+    "name": "breeze dark ui",
+    "colors": {
+        "editor.background": "#2d3136",
+        "editor.foreground": "#eff0f1",
+        "editorBracketMatch.background": "#606468",
+        "editorBracketMatch.border": "#606468",
+        "editorLineNumber.foreground": "#52575b",
+
+        "sideBar.background": "#262a2e",
+        "sideBar.foreground": "#cfd3d6",
+        "sideBarTitle.foreground": "#cfd3d6",
+        "sideBarSectionHeader.background": "#2d3136",
+        "sideBarSectionHeader.foreground": "#cfd3d6",
+
+        "activityBar.background": "#2d3136",
+        "activityBarBadge.background": "#007acc",
+
+        "editorGroupHeader.tabsBackground": "#262a2e",
+        "tab.activeBackground": "#2d3136",
+        "tab.inactiveBackground": "#262a2e",
+
+        "dropdown.background": "#262a2e",
+        "dropdown.foreground": "#f7f7f8",
+        "dropdown.border": "#262a2e",
+
+        "button.background": "#484c50"
+    }
+}

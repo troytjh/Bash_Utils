@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- this is an example XML file -->
+<people xmlns:x="http://studiostyles.info">
+  <person name="Jim Jones" ID="27">
+    <email html="yes">jim@example.invalid</email>
+    <address>
+      <post>123 Example St, &#160;South Brisbane</post>
+      <city>Brisbane</city>
+    </address>
+    <x:comments>
+    <![CDATA[ See? Data. Don't worry about this <tag>. ]]>
+    </x:comments>
+  </person>
+</people>
