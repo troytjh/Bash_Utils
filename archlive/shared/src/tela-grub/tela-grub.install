@@ -1,6 +1,6 @@
 THEME_DIR=/usr/share/grub/themes
 name=Tela
-gfxmode="GRUB_GFXMODE=2560x1440,auto"
+gfxmode="GRUB_GFXMODE=1920x1080,auto"
 
 # Check command availability
 function has_command() {

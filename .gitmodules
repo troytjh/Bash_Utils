@@ -1,0 +1,3 @@
+[submodule "archlive/shared/src/yay"]
+	path = archlive/shared/src/yay
+	url = https://aur.archlinux.org/yay.git
