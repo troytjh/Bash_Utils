@@ -13,14 +13,14 @@ hwclock --systohc
 sed -i "s/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g" /etc/locale.gen
 locale-gen
 
-printf "Enter Hostname:\n"
+printf "\nEnter Hostname: "
 read hostname
 echo $hostname >> /etc/hostname
 
-printf "Set root(admin) password:\n"
+printf "Set root(admin) password\n"
 passwd
 
-printf "Enter CPU Provider (intel/AMD):\n"
+printf "Enter CPU Provider (intel/AMD): "
 read CPU
 
 # install microcode updates
@@ -31,11 +31,11 @@ elif [[$CPU = "AMD" ]]; then
 fi
 
 # Configure Bootloader
-printf "EFI or MBR"
+printf "\nEFI or MBR: "
 read boot
 
 if [[ $boot = "EFI" ]]; then
-        printf "Enter efi directory:\n"
+        printf "Enter efi directory: "
         read efi_dir
         grub-install --target=x86_64-efi --efi-directory=$efi_dir --bootloader-id=GRUB
 elif [[ $boot = "MBR" ]]; then
@@ -46,16 +46,28 @@ fi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Configure 
-print "Create Local Account:\n"
-print "Enter Username: \n"
+printf "Create Local Account:\n"
+printf "Enter Username: \n"
 read USER
 
 #print("Enter Password: ")
 
-useradd -m -g users -G wheel -s /bin/bash $USER
+useradd -m -G wheel -s /bin/bash $USER
 passwd $USER
-sed -i '/^root ALL=(ALL) ALL/a troytjh ALL=(ALL) ALL' /etc/sudoers
+sed -i '/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL' /etc/sudoers
+
+pacman -U aur/*.pkg.tar.zst
 
 pacman -Syu
 
 systemctl enable sddm
+systemctl enable dhcpcd
+systemctl enable dbus-org.freedesktop.Avahi.service
+systemctl enable avahi-daemon.socket
+systemctl enable cups
+systemctl enable cups.socket
+systemctl enable cups.path
+systemctl enable NetworkManager
+systemctl enable systemd-resolved
+systemctl enable reflector
+systemctl enable reflector.timer

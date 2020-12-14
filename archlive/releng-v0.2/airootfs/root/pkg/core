@@ -1,7 +1,9 @@
 ddrescue
+dhcp
 ethtool
 exfatprogs
 grub
+openssh
 reflector
 sddm
 vim

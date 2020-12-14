@@ -6,9 +6,14 @@ cups
 cups-filters
 cups-pdf
 firefox
+git
 libreoffice-still
+networkmanager
 nss-mdns
+gsmartcontrol
+p7zip
 sddm
 vlc
+unarchiver
 wine-staging
 winetricks

@@ -5,7 +5,7 @@ cd src
 # Build stock packages
 for package in yay; do
     cd "${package}"
-	git pull
+	git submodule update --init ${package}
 	cd ..
 done
 
