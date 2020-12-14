@@ -1,5 +1,5 @@
 ddrescue
-dhcp
+dhcpcd
 ethtool
 exfatprogs
 grub

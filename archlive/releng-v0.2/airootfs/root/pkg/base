@@ -5,6 +5,7 @@ clementine
 cups
 cups-filters
 cups-pdf
+cups-pk-helper
 firefox
 git
 libreoffice-still
@@ -13,6 +14,7 @@ nss-mdns
 gsmartcontrol
 p7zip
 sddm
+system-config-printer
 vlc
 unarchiver
 wine-staging

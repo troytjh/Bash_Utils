@@ -56,13 +56,12 @@ useradd -m -G wheel -s /bin/bash $USER
 passwd $USER
 sed -i '/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL' /etc/sudoers
 
-pacman -U aur/*.pkg.tar.zst
+pacman -U /root/aur/*.pkg.tar.zst
 
 pacman -Syu
 
 systemctl enable sddm
 systemctl enable dhcpcd
-systemctl enable dbus-org.freedesktop.Avahi.service
 systemctl enable avahi-daemon.socket
 systemctl enable cups
 systemctl enable cups.socket
