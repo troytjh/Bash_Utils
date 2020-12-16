@@ -1,0 +1,59 @@
+# Maintainer: Troy Hoover <troytjh98@gmail.com>
+
+_screen=1080p # options 1080p | 2k | 4k
+pkgname=vimix-grub-$_screen
+pkgver=5.20.4
+pkgrel=1
+pkgdesc="Vimix theme for GRUB"
+arch=(any)
+url='https://www.kde.org/workspaces/plasmadesktop/'
+license=(LGPL)
+depends=(grub)
+makedepends=()
+install="vimix-grub.install"
+source=(
+    "git+https://github.com/vinceliuice/grub2-themes.git"
+    "vimix-remove_grub_install.patch"
+)
+sha256sums=('SKIP'
+            '9ad3533e48d1dbd94bd7b6fbf756cd861ce606bede879bb1017eebce131b9b2f')
+validpgpkeys=('2D1D5B0588357787DE9EE225EC94D18F7F05997E'  # Jonathan Riddell <jr@jriddell.org>
+              '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
+              'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
+              '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+prepare() {
+    printf "Preparing $_screen theme\n"
+
+    if [[ ${_screen} == '1080p' ]]; then
+      gfxmode="GRUB_GFXMODE=1920x1080,auto"
+    elif [[ ${_screen} == '1080p_21:9' ]]; then
+      gfxmode="GRUB_GFXMODE=2560x1080,auto"
+    elif [[ ${_screen} == '4k' ]]; then
+      gfxmode="GRUB_GFXMODE=3840x2160,auto"
+    elif [[ ${_screen} == '2k' ]]; then
+      gfxmode="GRUB_GFXMODE=2560x1440,auto"
+    else
+      gfxmode="GRUB_GFXMODE=auto"
+    fi
+
+	if grep "gfxmode=" ../vimix-grub.install 2>&1 >/dev/null; then
+	  sed -i "s|.*gfxmode=.*|gfxmode=\"${gfxmode}\"|" ../vimix-grub.install
+    else
+      echo "gfxmode=${gfxmode}" >> ../vimix-grub.install
+    fi
+}
+
+build() {
+  cd $srcdir/grub2-themes
+  sed -i "s%THEME_DIR=\"%THEME_DIR=\"${srcdir}\/build%g" install.sh
+  patch -p1 < ../vimix-remove_grub_install.patch
+  
+  ./install.sh -v --$_screen
+}
+
+package() { 
+  cd $srcdir
+  install -d "$pkgdir"/usr/share/grub/themes
+  cp -r build/* "$pkgdir"
+}

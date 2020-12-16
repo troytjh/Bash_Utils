@@ -1,0 +1,60 @@
+diff -uNr a/install.sh b/install.sh
+--- a/install.sh	2020-12-13 00:37:05.889701945 -0600
++++ b/install.sh	2020-12-13 01:08:07.190408852 -0600
+@@ -156,55 +156,7 @@
+       cp -a --no-preserve=ownership "${REO_DIR}/assets/assets-${icon}/icons-${screen}" "${THEME_DIR}/${name}/icons"
+       cp -a --no-preserve=ownership "${REO_DIR}/assets/assets-${icon}/select-${screen}/"*.png "${THEME_DIR}/${name}"
+     fi
+-
+-    # Set theme
+-    prompt -i "\n Setting ${name} as default..."
+-
+-    # Backup grub config
+-    cp -an /etc/default/grub /etc/default/grub.bak
+-
+-    if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
+-      #Replace GRUB_THEME
+-      sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${THEME_DIR}/${name}/theme.txt\"|" /etc/default/grub
+-    else
+-      #Append GRUB_THEME
+-      echo "GRUB_THEME=\"${THEME_DIR}/${name}/theme.txt\"" >> /etc/default/grub
+-    fi
+-
+-    # Make sure the right resolution for grub is set
+-    if [[ ${screen} == '1080p' ]]; then
+-      gfxmode="GRUB_GFXMODE=1920x1080,auto"
+-    elif [[ ${screen} == '1080p_21:9' ]]; then
+-      gfxmode="GRUB_GFXMODE=2560x1080,auto"
+-    elif [[ ${screen} == '4k' ]]; then
+-      gfxmode="GRUB_GFXMODE=3840x2160,auto"
+-    elif [[ ${screen} == '2k' ]]; then
+-      gfxmode="GRUB_GFXMODE=2560x1440,auto"
+-    fi
+-
+-    if grep "GRUB_GFXMODE=" /etc/default/grub 2>&1 >/dev/null; then
+-      #Replace GRUB_GFXMODE
+-      sed -i "s|.*GRUB_GFXMODE=.*|${gfxmode}|" /etc/default/grub
+-    else
+-      #Append GRUB_GFXMODE
+-      echo "${gfxmode}" >> /etc/default/grub
+-    fi
+-
+-    if grep "GRUB_TERMINAL=console" /etc/default/grub 2>&1 >/dev/null || grep "GRUB_TERMINAL=\"console\"" /etc/default/grub 2>&1 >/dev/null; then
+-      #Replace GRUB_TERMINAL
+-      sed -i "s|.*GRUB_TERMINAL=.*|#GRUB_TERMINAL=console|" /etc/default/grub
+-    fi
+-
+-    if grep "GRUB_TERMINAL_OUTPUT=console" /etc/default/grub 2>&1 >/dev/null || grep "GRUB_TERMINAL_OUTPUT=\"console\"" /etc/default/grub 2>&1 >/dev/null; then
+-      #Replace GRUB_TERMINAL_OUTPUT
+-      sed -i "s|.*GRUB_TERMINAL_OUTPUT=.*|#GRUB_TERMINAL_OUTPUT=console|" /etc/default/grub
+-    fi
+-
+-    # Update grub config
+-    prompt -i "\n Updating grub config...\n"
+-
+-    updating_grub
+-    prompt -w "\n * At the next restart of your computer you will see your new Grub theme: '$theme' "
++  
+   else
+     #Check if password is cached (if cache timestamp not expired yet)
+     sudo -n true 2> /dev/null && echo
