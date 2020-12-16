@@ -16,6 +16,7 @@ sddm-kcm
 plasma-browser-integration
 plasma-disks
 plasma-nm
+plasma-wayland-protocols
 
 ark
 cervisia

@@ -16,6 +16,8 @@ sddm-kcm
 plasma-browser-integration
 plasma-disks
 plasma-nm
+plasma-workspace-wallpapers
+plasma-wayland-protocols
 
 ark
 audiocd-kio
