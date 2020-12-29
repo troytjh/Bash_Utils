@@ -74,12 +74,13 @@ partition_MBR()
     let "swap=${swap}+1"  # add efi offset
     swap="${swap}MiB"
 
-
     parted -a optimal $1 mkpart primary linux-swap 1MiB $swap &> /dev/null
     parted -a optimal $1 mkpart primary ext4 $swap 100%
 
-
+	mkswap ${1}1
     swapon ${1}1
+
+	mkfs.ext4 ${1}2
     mkdir /mnt &> /dev/null
     mount -v -t ext4 ${1}2 /mnt
 }
@@ -110,27 +111,26 @@ partition_auto()
 
 }
 
-partition_manual()
+partition_man()
 {
     echo "Mount root to /mnt and enter 'cont' to continue"
-        read $ans
-        case $ans in
-        cont) 
-            continue;;
+    read ans
+    case $ans in
+        cont)
+            if !(mountpoint /mnt); then
+                echo -e "${RED}Mount point /mnt does not exist"
+                exit
+			fi;;
         *) 
             exit;;
     esac
-    if !(mountpoint /mnt); then
-        echo -e "${RED}Mount point /mnt is does not exist"
-        exit
-    fi
 }
 
 partition() 
 {
     echo "Configure Partition Scheme"
     printf "Use automatic or manual partitioning [A/m]: "
-    read $part
+    read part
     case $part in
         a|A)
             partition_auto;;
