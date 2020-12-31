@@ -1,0 +1,12 @@
+clonezilla 
+	# ncurses partition and disk imaging/cloning program
+ddrescue
+	# GNU data recovery tool
+
+# etc
+lsscsi
+mdadm
+nbd
+nvme-cli
+smartmontools
+testdisk
