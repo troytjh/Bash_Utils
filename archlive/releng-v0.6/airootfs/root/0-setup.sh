@@ -52,8 +52,9 @@ partition_GPT()
     parted $1 print
 
     mkdir /mnt &> /dev/null
-    mount -v -t ext4 ${1}3 /mnt
     mkdir /mnt/boot &> /dev/null
+	sleep 1
+    mount -v -t ext4 ${1}3 /mnt
     mount -v -t vfat ${1}1 /mnt/boot
     swapon ${1}2
 }
@@ -82,6 +83,7 @@ partition_MBR()
 
 	mkfs.ext4 ${1}2
     mkdir /mnt &> /dev/null
+    sleep 1
     mount -v -t ext4 ${1}2 /mnt
 }
 
@@ -161,5 +163,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp chroot_install.sh /mnt/root
 cp -r pkg /mnt/root
 cp -R aur /mnt/root
-arch-chroot /mnt bash /root/chroot_install.sh
-
+arch-chroot /mnt 
