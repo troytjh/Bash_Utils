@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 RED='\033[0;31m'
+NC='\033[0m'
 
 swap()
 {
@@ -96,7 +97,7 @@ partition_auto()
     echo "Please enter disk: (example /dev/sda)"
     read DISK
     if [ ! -b "$DISK" ]; then
-        echo -e "${RED}Block device does not exist"
+        echo -e "${RED}Block device does not exist${NC}"
         exit
     fi
 
@@ -119,8 +120,8 @@ partition_man()
     read ans
     case $ans in
         cont)
-            if !(mountpoint /mnt); then
-                echo -e "${RED}Mount point /mnt does not exist"
+            if !(mountpoint /mnt &> /dev/null); then
+                echo -e "${RED}Mount point /mnt does not exist${NC}"
                 exit
 			fi;;
         *) 
@@ -143,6 +144,9 @@ partition()
     esac
 }
 
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+    echo -e "${RED}Run setup outside of chroot${NC}"
+fi
 
 timedatectl set-ntp true
 
@@ -160,7 +164,7 @@ cp -r /root/configs/* $MNT
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-cp chroot_install.sh /mnt/root
+cp *.sh /mnt/root
 cp -r pkg /mnt/root
-cp -R aur /mnt/root
-arch-chroot /mnt 
+cp -r aur /mnt/root
+#arch-chroot /mnt 
