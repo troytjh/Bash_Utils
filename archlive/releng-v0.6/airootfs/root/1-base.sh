@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 
-RED='\033[0;31m'
-NC='\033[0m'
-
-if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
-    if !(mountpoint /mnt &> /dev/null); then
-                echo -e "${RED}Mount point /mnt does not exist${NC}"
-                exit
-	fi
-    
-    arch-chroot /mnt
-fi
-
 PKGS=(
 
     # --- XORG Display Rendering
@@ -26,13 +14,15 @@ PKGS=(
     # --- Setup Desktop
         'plasma'
         'plasma-wayland-session'    
-		'plasma-wayland-protocols' 
+		'plasma-wayland-protocols'
+	    'packagekit-qt5'	
 		'xclip'                 # System Clipboard
 
     # --- Setup Desktop Apps
 		'calibre'
 
     # --- Login Display Manager
+        'efibootmgr'
         'grub'
 	    'sddm'                   # Base Login Manager
     
@@ -75,7 +65,7 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-printf "Enter CPU Provider (intel/AMD): "
+printf "\nEnter CPU Provider (intel/AMD): "
 read CPU
 
 # install microcode updates

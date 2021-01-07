@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+RED='\033[0;31m'
+NC='\033[0m'
+
 menu()
 {
     echo 'Install menu:'
@@ -8,26 +11,62 @@ menu()
     do
         case $opt in
             "Setup")
-                bash 0-setup.sh
+                bash /root/0-setup.sh
                 menu
                 ;;
             "Base")
-                bash 1-base.sh
+                if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+                    if !(mountpoint /mnt &> /dev/null); then
+                        echo -e "${RED}Mount point /mnt does not exist${NC}"
+                        exit
+	                fi
+    
+                    arch-chroot /mnt bash /root/1-base.sh
+                else
+                    bash /root/1-base.sh
+                fi
                 menu
                 ;;
 
             "Packages")
-                bash 2-software-pacman.sh
+                if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+                    if !(mountpoint /mnt &> /dev/null); then
+                        echo -e "${RED}Mount point /mnt does not exist${NC}"
+                        exit
+	                fi
+    
+                    arch-chroot /mnt bash /root/2-software-pacman.sh
+                else
+                    bash /root/2-software-pacman.sh
+                fi
                 menu
                 ;;
 
             "AUR Packages")
-                bash 3-software-aur.sh
+                if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+                    if !(mountpoint /mnt &> /dev/null); then
+                        echo -e "${RED}Mount point /mnt does not exist${NC}"
+                        exit
+	                fi
+    
+                    arch-chroot /mnt bash /root/3-software-aur.sh
+                else
+                    bash /root/3-software_aur.sh
+                fi
                 menu
                 ;;
 
             "Post Setup")
-                bash 4-post-install.sh
+                if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+                    if !(mountpoint /mnt &> /dev/null); then
+                        echo -e "${RED}Mount point /mnt does not exist${NC}"
+                        exit
+	                fi
+    
+                    arch-chroot /mnt bash /root/4-post-install.sh
+                else
+                    bash /root/4-post-install.sh
+                fi
                 menu
                 ;;
 

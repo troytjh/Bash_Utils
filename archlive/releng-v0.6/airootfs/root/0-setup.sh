@@ -53,9 +53,11 @@ partition_GPT()
     parted $1 print
 
     mkdir /mnt &> /dev/null
-    mkdir /mnt/boot &> /dev/null
 	sleep 1
     mount -v -t ext4 ${1}3 /mnt
+	
+	mkdir /mnt/boot &> /dev/null
+	sleep 1
     mount -v -t vfat ${1}1 /mnt/boot
     swapon ${1}2
 }
