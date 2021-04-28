@@ -1,0 +1,53 @@
+ [General]
+BrowserApplication=brave-browser.desktop
+ColorScheme=BreezeDark
+Name=Breeze Dark
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=DejaVu Sans,8,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+widgetStyle=Breeze
+
+[Icons]
+Theme=breeze-dark
+
+[KDE]
+ColorScheme=Breeze
+LookAndFeelPackage=org.kde.breezedark.desktop
+contrast=4
+widgetStyle=Breeze
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=false
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=false
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=153
+View Style=Simple
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[WM]
+activeBackground=49,54,59
+activeBlend=255,255,255
+activeFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+activeForeground=239,240,241
+inactiveBackground=49,54,59
+inactiveBlend=75,71,67
+inactiveForeground=127,140,141
