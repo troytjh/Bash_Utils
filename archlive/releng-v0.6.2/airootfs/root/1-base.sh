@@ -55,6 +55,9 @@ PKGS=(
         'hplip'                 # HP Drivers
 		'nss-mdns'
         'system-config-printer' # Printer setup  utility
+    
+    # --- Fonts
+        'ttf-dejavu'
 )
 
 # Install packages
