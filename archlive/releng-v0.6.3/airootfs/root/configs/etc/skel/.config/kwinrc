@@ -1,0 +1,15 @@
+[Compositing]
+OpenGLIsUnsafe=false
+
+[Desktops]
+Number=3
+Rows=3
+
+[Plugins]
+highlightwindowEnabled=true
+kwin4_effect_fadedesktopEnabled=true
+slideEnabled=false
+
+[org.kde.kdecoration2]
+library=org.kde.breeze
+theme=Breeze
