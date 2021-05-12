@@ -1,0 +1,11 @@
+[General]
+BrowserApplication=firefox.desktop
+ColorScheme=BreezeDark
+Name=Breeze Dark
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=DejaVu Sans,8,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
