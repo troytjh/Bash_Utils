@@ -1,8 +1,0 @@
-[Desktops]
-Number=3
-Rows=1
-
-[Plugins]
-highlightwindowEnabled=true
-kwin4_effect_fadedesktopEnabled=true
-slideEnabled=false
