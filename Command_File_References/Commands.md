@@ -1,6 +1,7 @@
 # Task Management
 ```
-lsof		give running processes and their related file paths 
+# give running processes and their related file paths 
+lsof
 ```
 
 # git commands
