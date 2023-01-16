@@ -35,4 +35,6 @@ pacman -Qet
 sudo du -chad 1 <dir> | sort -h
 
 nnn -dHS
+
+ncdu
 ```
